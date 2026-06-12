@@ -1,1 +1,5 @@
-# Document-Chatbot
+This project implements a Retrieval-Augmented Generation (RAG) chatbot in Flowise that enables users to query information from multiple document formats, including PDF, Word, and PowerPoint files. The documents are first processed using a Recursive Character Text Splitter to create manageable text chunks, which are then converted into vector embeddings using the Hugging Face all-MiniLM-L6-v2 embedding model. These embeddings are stored in an In-Memory Vector Store for efficient semantic retrieval.
+
+For question answering, the system uses Groq's Llama 3.1 8B Instant model together with a Conversational Retrieval QA Chain. When a user submits a query, the chatbot retrieves the most relevant document chunks from the vector store and generates responses based solely on the retrieved content. The workflow also supports conversational interactions by rephrasing follow-up questions into standalone queries, ensuring accurate and context-aware answers while minimizing hallucinations.
+
+Technologies Used: Flowise, Groq (Llama 3.1 8B Instant), Hugging Face Embeddings, In-Memory Vector Store, and Retrieval-Augmented Generation (RAG).
